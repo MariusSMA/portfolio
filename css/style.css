@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+/* Global styles */
+
+:root {
+  --white: #ffffff;
+  --red-gradient: linear-gradient(268.64deg, #ff2e63 0%, #e00039 99.62%);
+  --welcome-gradient: linear-gradient(187.18deg, #252a34 19.4%, #464f62 100%);
+  --project-gradient: linear-gradient(180deg, #08d9d6 0.01%, #07b1af 100%);
+  --contact-gradient: linear-gradient(193.34deg, #252a34 0%, #464f62 100%);
+  --card-footer-bg: #373f4d;
+  --welcome-description: #08d9d6;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3.4375rem;
+}
+
+button:hover {
+  transform: translateY(-0.3rem);
+}
+
+/* Mobile Layout */
+
+body {
+  min-height: 100vh;
+  color: var(--white);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background: var(--red-gradient);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  width: min(85%, 80rem);
+  margin: 0 auto;
+}
+
+#navbar {
+  height: 3.4375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+
+.link {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  bottom: -7.5%;
+  transition: all 0.5s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--white);
+}
+
+#welcome-section {
+  min-height: 100vh;
+  background: var(--welcome-gradient);
+  display: flex;
+  align-items: center;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcome-text-section {
+  max-width: 28.125rem;
+  margin-top: 2.6875rem;
+  margin-bottom: 2.25rem;
+}
+
+.welcome-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.welcome-description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--welcome-description);
+  margin-bottom: 1rem;
+}
+
+.colored-welcome-description {
+  font-weight: 600;
+  background: var(--red-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.active {
+  display: none;
+}
+
+.welcome-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: var(--red-gradient);
+  color: var(--white);
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.men-illustration {
+  display: none;
+  margin-left: auto;
+}
+
+#projects {
+  background: var(--project-gradient);
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.project-header {
+  padding: 3rem 0 5rem;
+}
+
+.project-title {
+  position: relative;
+  width: 16.4375rem;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.project-title::after {
+  content: "";
+  background-image: url(../images/curved-arrow.svg);
+  width: 2.892525rem;
+  height: 3.3rem;
+  position: absolute;
+  right: -2%;
+  top: 75%;
+}
+
+.project-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.project-tile {
+  border-radius: 0.625rem;
+  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16),
+    0 0.1875rem 0.375rem rgba(0, 0, 0, 0.23);
+}
+
+.project-tile-link {
+  text-decoration: none;
+}
+
+.project-tile-image {
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
+}
+
+.project-tile-footer {
+  background-color: var(--card-footer-bg);
+  padding: 1rem 0;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  margin-top: -0.3125rem;
+}
+
+.project-tile-footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.project-footer-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.project-footer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--contact-gradient);
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin: 0 auto;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project-footer-btn-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.project-footer-btn-right-arrow {
+  width: 0.85rem;
+  margin-left: 1rem;
+}
+
+#contact {
+  background: var(--contact-gradient);
+}
+
+.contact-header {
+  padding-top: 3rem;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mail-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.mail-section-text {
+  max-width: 12.5rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.mail-section-text-bold {
+  font-weight: 600;
+}
+
+.leave-a-message-section {
+  position: relative;
+  width: 15.25rem;
+  margin-bottom: 2rem;
+}
+
+.leave-a-message-section::after {
+  content: "";
+  background-image: url(../images/curved-arrow-rotated.svg);
+  width: 2rem;
+  height: 2.75rem;
+  position: absolute;
+  right: -5%;
+  top: 50%;
+}
+
+.contact-body {
+  margin-bottom: 5rem;
+}
+
+.social-links {
+  list-style-type: none;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.social-link-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.contact-footer-text {
+  font-weight: 300;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+/* Mobile Layout (320px) */
+
+@media (max-width: 20rem) {
+  .links {
+    font-size: 0.9rem;
+    gap: 1rem;
+  }
+
+  .welcome-title {
+    font-size: 3rem;
+  }
+
+  .project-title {
+    width: 13.5rem;
+  }
+
+  .project-title::after {
+    top: 85%;
+  }
+
+  .project-tiles {
+    grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
+  }
+
+  .mail-section {
+    gap: 1rem;
+  }
+
+  .mail-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mail-section-text {
+    font-size: 0.9rem;
+  }
+
+  .leave-a-message-section::after {
+    right: 1.5%;
+  }
+
+  .social-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* Mobile Layout (350px - 520px) */
+
+@media (min-width: 21.875rem) and (max-width: 32.5rem) {
+  .welcome-title {
+    max-width: 15.3125rem;
+  }
+
+  .welcome-description {
+    max-width: 14rem;
+  }
+}
+
+/* Tablet Layout */
+
+@media (min-width: 48rem) {
+  .active {
+    display: block;
+  }
+}
+
+/* Desktop Layout (1024px) */
+
+@media (min-width: 64rem) {
+  .men-illustration {
+    display: block;
+    width: 80%;
+  }
+}
+
+/* Desktop Layout (1680px) */
+
+@media (min-width: 105rem) {
+  .men-illustration {
+    width: 100%;
+  }
+
+  #projects {
+    position: relative;
+  }
+
+  #projects::before,
+  #projects::after {
+    content: "";
+    width: 6.25rem;
+    height: 10.9375rem;
+    position: absolute;
+  }
+
+  #projects::before {
+    background: url(../images/top-shape.svg) no-repeat;
+    right: 0;
+    top: 10%;
+  }
+
+  #projects::after {
+    background: url(../images/bottom-shape.svg) no-repeat;
+    left: 0;
+    bottom: 10%;
+  }
+}
